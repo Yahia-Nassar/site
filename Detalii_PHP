@@ -1,0 +1,89 @@
+Baza de date este facuta cu xampp:
+ nume baza de date trast
+    Facut mom doar 1 table numit users : 
+     CREATE TABLE `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(32) NOT NULL,
+ `password` varchar(32) NOT NULL,
+ `email` varchar(64) NOT NULL,
+ `first_name` varchar(32) DEFAULT NULL,
+ `last_name` varchar(64) DEFAULT NULL,
+ `nickname` varchar(32) NOT NULL,
+ `age` int(3) DEFAULT NULL,
+ `hobbys` varchar(64) DEFAULT NULL,
+ `Admin` tinyint(1) NOT NULL,
+ `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`email`),
+ UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4
+Conectarea se face cu username:  root ; pw:1234 (creati-va un root cu acea parola sau schimbati-o din validate/validator)
+
+La sing in si sing_out acele 2 file validate se conn cu baza de date pentru a prelua/ insera date
+Cum mom tot e in php nu putem avea acea optiune de save local.
+
+
+[tabel sectiuni_reguli -> pt contorizarea parcurgerilor regulilor]
+     CREATE TABLE `sectiuni_reguli` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(32) NOT NULL,
+ `s1` varchar(32) DEFAULT NULL,
+ `s2` varchar(32) DEFAULT NULL,
+ `s3` varchar(32) DEFAULT NULL,
+ `s4` varchar(32) DEFAULT NULL,
+ `s5` varchar(32) DEFAULT NULL,
+ `s6` varchar(32) DEFAULT NULL,
+ `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`username`),
+ UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4
+
+[tabel categorii_semne -> pt contorizarea parcurgerilor categoriilor de semne]
+     CCREATE TABLE `categorii_semne` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(32) NOT NULL,
+ `Indicatoare de avertizare` varchar(64) DEFAULT NULL,
+ `Indicatoare de informare` varchar(64) DEFAULT NULL,
+ `Indicatoare de interzicere sau restrictie` varchar(64) DEFAULT NULL,
+ `Panouri aditionale` varchar(64) DEFAULT NULL,
+ `Indicatoare de informare turistica` varchar(64) DEFAULT NULL,
+ `Indicatoare de obligare` varchar(64) DEFAULT NULL,
+ `Indicatoare de orientare` varchar(64) DEFAULT NULL,
+ `Indicatoare de prioritate` varchar(64) DEFAULT NULL,
+ `Semnale luminoase` varchar(64) DEFAULT NULL,
+ `Indicatoare de instalate la trecerea cu calea ferata` varchar(64) DEFAULT NULL,
+ `Indicatoare kilometrice` varchar(64) DEFAULT NULL,
+ `Indicatoare rutiere temporare` varchar(64) DEFAULT NULL,
+ `Mijloace auxiliare de semnalizare a lucrărilor` varchar(64) DEFAULT NULL,
+ `Marcaje longitudinale` varchar(64) DEFAULT NULL,
+ `Marcaje transversale` varchar(64) DEFAULT NULL,
+ `Marcaje diverse` varchar(64) DEFAULT NULL,
+ `Marcaje laterale` varchar(64) DEFAULT NULL,
+ `Semnalele polițistului rutier` varchar(64) DEFAULT NULL,
+ `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`username`),
+ UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4
+
+[tabel teste]
+CREATE TABLE `teste` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(32) NOT NULL,
+ `Nickname` varchar(32) NOT NULL,
+ `t1` int(11) DEFAULT NULL,
+ `t2` int(11) DEFAULT NULL,
+ `t3` int(11) DEFAULT NULL,
+ `t4` int(11) DEFAULT NULL,
+ `t5` int(11) DEFAULT NULL,
+ `t6` int(11) DEFAULT NULL,
+ `t7` int(11) DEFAULT NULL,
+ `t8` int(11) DEFAULT NULL,
+ `t9` int(11) DEFAULT NULL,
+ `t10` int(11) DEFAULT NULL,
+ `t_A` int(11) DEFAULT NULL,
+ `t_B` int(11) DEFAULT NULL,
+ `categorii_parcurse` int(11) NOT NULL,
+ `total` float NOT NULL,
+ `create_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ PRIMARY KEY (`username`),
+ UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4
